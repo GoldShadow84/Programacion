@@ -1,0 +1,88 @@
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+
+public class Tp1_Ej1 {
+
+	public static int MAX = 10;
+	public static int MAXVALOR = 9;
+	public static int MINVALOR = 1;
+	
+	public static void main(String [] args) {
+		
+		int [] arr = new int[MAX];
+		
+		try {
+		
+		BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
+			
+		cargar_arreglo(arr);
+		imprimir_arreglo(arr);
+		invertir_arreglo(arr);
+		imprimir_arreglo(arr);
+			
+		}
+		catch(Exception exc) {
+			System.out.println(exc);
+		}
+		
+	}
+	
+	public static void invertir_arreglo(int [] arr) {
+		
+		int index_one = 1;
+		int index_two = 0;
+		int aux = 0;
+		
+		while(index_one < MAX) {
+			
+			while(index_two < MAX-1) {
+				aux = arr[index_two];
+				arr[index_two] = arr[index_two+1];
+				arr[index_two+1] = aux;
+			}
+			
+			index_one++;
+		}
+		
+		
+	}
+	
+	
+	public static void cargar_arreglo(int [] arr) {
+		Random r = new Random();
+		
+		int index = 0;
+		
+		while(index < MAX) {
+			
+			arr[index] = (r.nextInt(MAXVALOR-MINVALOR+1)+MINVALOR);
+			
+			index++;
+			
+		}
+		
+	}
+	
+	public static void imprimir_arreglo(int [] arr) {
+		int index = 0;
+		
+		System.out.print("Arreglo: ");
+		
+		while(index < MAX) {
+			
+			System.out.print("["+arr[index]+"]");
+			
+			index++;
+		}
+		
+	}
+	
+	
+	
+
+	
+	
+	
+}
