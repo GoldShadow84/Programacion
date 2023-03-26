@@ -76,7 +76,7 @@ caracteres repetidos (la separación previa entre las secuencias de A debe manten
 		
 		int i = 0;
 		
-		while((i < MAX-1)&&(arrA[in_rep_arrA+i]) != 0) {
+		while((i < MAX)&&(arrA[in_rep_arrA+i]) != 0) {
 			corrimiento_der(arrA, in_rep_arrA-i);
 			
 			arrA[in_rep_arrA+i] = arrB[in_car_rep_arrB+i];

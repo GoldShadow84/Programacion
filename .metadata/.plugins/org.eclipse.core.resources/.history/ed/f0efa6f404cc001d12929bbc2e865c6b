@@ -92,7 +92,7 @@ caracteres repetidos (la separación previa entre las secuencias de A debe manten
 	
 	public static void corrimiento_der(int [] arr, int indice) {
 		
-		while(indice > MIN) {
+		while(indice >= MIN) {
 			
 			arr[indice] = arr[indice-1];
 			

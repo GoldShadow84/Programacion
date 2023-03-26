@@ -38,7 +38,7 @@ public class Tp3_Ej17 {
 	public static void main(String [] args) {
 		
 		int [] arrA = {0,1,3,0,0,1,3,0,0,2,4,0,0,2,4,0,2,4,0,0}; // 2,4,3
-		int [] arrB = {0,1,2,3,0,0,1,1,1,2,0,3,3,3,3,0,3,2,0,0};
+		int [] arrB = {0,1,2,3,0,0,1,1,1,2,0,2,2,2,2,0,3,2,0,0};
 		
 		
 		System.out.println("Arreglo A:");
@@ -63,21 +63,15 @@ public class Tp3_Ej17 {
 			
 			reemplazar_sec_arrA(arrA, arrB, inicio_repetida_arrA, inicio_carac_rep_arrB);
 			
-			System.out.println("\nSecuencia mas repetida de arreglo A reemplazada por sec con mas caracteres repetidos de arreglo B");
-			imprimir_arreglo(arrA);
+			System.out.println("\nSecuencia ");
 	}
 	
 	public static void reemplazar_sec_arrA(int [] arrA, int [] arrB, int in_rep_arrA, int in_car_rep_arrB) {
-		/*
-		 * 
-_reemplace en A la secuencia que más se repite por la secuencia de B con más
-caracteres repetidos (la separación previa entre las secuencias de A debe mantenerse).
-		 */
 		
 		int i = 0;
 		
-		while((i < MAX-1)&&(arrA[in_rep_arrA+i]) != 0) {
-			corrimiento_der(arrA, in_rep_arrA-i);
+		while((i < MAX-1)&&(arrA[in_rep_arrA+i] != 0)&&(arrB[in_car_rep_arrB+i] != 0)) {
+			corrimiento_der(arrA, in_rep_arrA+i);
 			
 			arrA[in_rep_arrA+i] = arrB[in_car_rep_arrB+i];
 			
