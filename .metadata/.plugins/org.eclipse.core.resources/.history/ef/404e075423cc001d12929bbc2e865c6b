@@ -75,7 +75,7 @@ public class Tp3_Ej17 {
 		int aux = ((fin-in_car_rep_arrB)+1);
 
 		
-		corrimiento_der(arrA,  in_rep_arrA);
+		
 		while(i < aux) {
 			
 			arrA[in_rep_arrA+i] = arrB[in_car_rep_arrB+i];
@@ -83,7 +83,7 @@ public class Tp3_Ej17 {
 			i++;
 		}
 		
-		
+		corrimiento_der(arrA,  in_rep_arrA);
 	}
 	
 

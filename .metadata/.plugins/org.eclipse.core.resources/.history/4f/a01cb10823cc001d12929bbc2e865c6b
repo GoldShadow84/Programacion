@@ -37,8 +37,8 @@ public class Tp3_Ej17 {
 	
 	public static void main(String [] args) {
 		
-		int [] arrA = {0,1,3,2,0,1,3,2,0,1,3,2,0,2,4,0,2,5,0,0}; // 2,4,3
-		int [] arrB = {0,1,2,3,0,0,1,1,1,2,0,3,2,3,0,0,3,2,0,0};
+		int [] arrA = {0,1,3,0,0,1,3,0,0,2,4,0,0,2,4,0,2,4,0,0}; // 2,4,3
+		int [] arrB = {0,1,2,3,0,0,1,1,1,2,0,3,3,3,3,0,3,2,0,0};
 		
 		
 		System.out.println("Arreglo A:");
@@ -68,7 +68,12 @@ public class Tp3_Ej17 {
 	}
 	
 	public static void reemplazar_sec_arrA(int [] arrA, int [] arrB, int in_rep_arrA, int in_car_rep_arrB) {
-
+		/*
+		 * 
+_reemplace en A la secuencia que más se repite por la secuencia de B con más
+caracteres repetidos (la separación previa entre las secuencias de A debe mantenerse).
+		 */
+		
 		int i = 0;
 		int fin = 0;
 		fin = buscar_fin(arrB, in_car_rep_arrB);
