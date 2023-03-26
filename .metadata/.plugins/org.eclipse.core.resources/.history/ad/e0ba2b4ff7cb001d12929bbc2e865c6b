@@ -37,7 +37,7 @@ public class Tp3_Ej17 {
 	public static void main(String [] args) {
 		
 		int [] arrA = {0,1,3,0,0,1,3,0,0,2,4,0,0,2,4,0,2,4,0,0}; // 2,4,3
-		int [] arrB = {0,1,2,3,0,0,1,1,1,2,0,2,2,2,2,0,3,2,0,0};
+		int [] arrB = {0,1,2,3,0,0,1,1,1,2,0,2,2,1,0,5,3,2,0,0};
 		
 		
 		System.out.println("Arreglo A:");
@@ -50,6 +50,8 @@ public class Tp3_Ej17 {
 	}
 	
 	public static void encontrar_secs(int [] arrA, int [] arrB) {
+		int inicio = 0;
+		int fin = -1;
 		int inicio_repetida_arrA = 0;
 		int inicio_carac_rep_arrB = 0;
 		
@@ -59,54 +61,19 @@ public class Tp3_Ej17 {
 		
 			//reemplazar(arrA, arrB, inicio_repetida_arrA, inicio_carac_rep_arrB);
 			
-			System.out.println("\nla secuencia más repetida empieza en la pos "+inicio_repetida_arrA);
-			System.out.println("\nLa secuencia con caracteres más repetidos empieza en la pos: "+inicio_carac_rep_arrB);
+			System.out.println("la secuencia más repetida empieza en la pos "+inicio_repetida_arrA);
 		
 	}
 	
 	public static int secuencia_carac_rep(int [] arrB) {
-		 
-		int inicio = 0;
-		int fin = -1;
-		int aux = 0;
-		int aux2 = 0;
-		int iniciocar = 0;
-		
-		while(inicio < MAX-1) {
-			
-			inicio = buscar_inicio(arrB, fin+1);
-			
-			if(inicio < MAX-1) {
-				fin = buscar_fin(arrB, inicio);
-				
-				aux = comprobar_rep(arrB, inicio, fin);
-				
-				if(aux > aux2) {
-					aux2 = aux;
-					iniciocar = inicio;
-				}
-			}
-		}
 		
 		
 		
-		return iniciocar;
+		
+		return 0;
 	}
 	
-	public static int comprobar_rep(int [] arr, int inicio, int fin) {
-		int tmp = 0;
-		int init = inicio;
-		
-		while(init <= fin) {
-			if(arr[init] == arr[init+1]) {
-				tmp++;
-			}
-			init++;
-		}
-		
-		
-		return tmp;
-	}
+	
 	
 	public static int secuencia_mas_repetida(int [] arrA) {
 		int inicio = 0;
@@ -150,26 +117,44 @@ public class Tp3_Ej17 {
 			inicio2 = buscar_inicio(arr, fin2+1);
 			
 			if(inicio2 < MAX-1) {
-					fin2 = buscar_fin(arr, inicio2);
-					
-					if(((fin2-inicio2)+1) == ((oldfin-oldinicio)+1)) {
-						while((inicio2+i <= fin2) && (arr[inicio2+i] == arr[oldinicio+i])) {
-							i++;
-						}
-						
-						if(i == ((fin2-inicio2)+1)) {
-							tmp++;
-						}
+				fin2 = buscar_fin(arr, inicio2);
+				
+				if(((fin2-inicio2)+1) == ((oldfin-oldinicio)+1)) {
+					while((inicio2+i <= fin2) && (arr[inicio2+i] == arr[oldinicio+i])) {
+						i++;
 					}
+					
+					if(i == ((fin2-inicio2)+1)) {
+						tmp++;
+					}
+				}
+				
+			
+				
+			
 				
 				
 				}
+			
 			}
 		
 		return tmp;
 	}
 
 
+
+	
+	public static int buscar_sec_rep(int [] arr, int inicio, int fin) {
+		 
+		
+		
+		return 0;
+	}
+	
+	public static int secuencia_carac_rep(int [] arrB) {
+		
+		return 0;
+	}
 	
 	public static void reemplazar(int [] arrA, int [] arrB, int in_rep_arrA, int in_car_rep_arrB) {
 		
