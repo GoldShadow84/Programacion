@@ -1,0 +1,87 @@
+/*
+ * Suponer que se tienen dos arreglos A y B de secuencias (de caracteres separados por uno o
+más espacio) de tamaño MAX (arreglo empieza y termina con uno o más caracteres
+espacio). A y B que están precargadas, y además se tienen los siguientes métodos (existen y
+no se tienen que implementar):
+a) un método que permite obtener el índice inicial de la secuencia que más se repite de un
+arreglo de secuencias de tamaño MAX (que empieza y termina con o más caracteres
+espacios).
+
+b) un método que retorna el índice inicial de la secuencia que tiene más caracteres
+repetidos de un arreglo de secuencias (de caracteres separados por uno o más caracteres
+espacio) de tamaño MAX (que empieza y termina con espacio).
+
+
+Se pide realizar un programa completo que (sin utilizar arreglos auxiliares/extras a los
+mencionados):
+
+_reemplace en A la secuencia que más se repite por la secuencia de B con más
+caracteres repetidos (la separación previa entre las secuencias de A debe mantenerse).
+
+En caso de utilizar uno o más de los métodos preexistentes mencionados en el enunciado
+definir el o los encabezados de los mismos. No se requiere hacer métodos de carga e
+impresión de arreglos.
+ */
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Random;
+
+public class Tp3_Ej17 {
+	public static int MAX = 20;
+	public static int MAXVALOR = 9;
+	public static int MINVALOR = 1;
+	public static double probabilidad = 0.4;
+	
+	public static void main(String [] args) {
+		
+		int [] arrA = {0,2,4,3,0,1,5,0,0,2,4,3,0,9,0,0,2,4,3,0};
+		int [] arrB = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		
+		cargar_arreglo(arr);
+		
+		imprimir_arreglo(arr);
+		
+		
+		
+	}
+	
+	public static void cargar_arreglo(int [] arr) {
+		
+		Random r = new Random();
+		int index = 1;
+		arr[0] = 0;
+		arr[MAX-1] = 0;
+	
+		while(index < MAX-1) {
+			
+			if(r.nextDouble() > probabilidad) {
+				
+				arr[index] = (r.nextInt(MAXVALOR-MINVALOR+1)+MINVALOR);
+				
+			}
+			else {
+				arr[index] = 0;
+			}
+			
+			index++;
+		}
+		
+	}
+	
+	
+	public static void imprimir_arreglo(int [] arr) {
+		int index = 0;
+		
+		System.out.print("Arreglo: ");
+		
+		while(index < MAX) {
+			
+			System.out.print("["+arr[index]+"]");
+			
+			index++;
+		}
+		
+	}
+}
